@@ -5,7 +5,7 @@ import { RootState, useAppDispatch } from "../store";
 import { setSelectedStock } from "../stocks/stocksSlice";
 import { fetchStocks } from "../stocks/stocksThunk";
 
-const StockDropdown: React.FC = () => {
+const StockDropDown: React.FC = () => {
   const dispatch = useAppDispatch();
   const { stocks, selectedStock } = useSelector(
     (state: RootState) => state.stocks
@@ -44,4 +44,4 @@ const StockDropdown: React.FC = () => {
   );
 };
 
-export default StockDropdown;
+export default StockDropDown;

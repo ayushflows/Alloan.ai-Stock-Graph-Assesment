@@ -1,5 +1,5 @@
 import DurationToggle from "./DurationToggle"
-import StockDropdown from "./StockDropdown"
+import StockDropDown from "./StockDropDown"
 import StockGraph from "./StockGraph"
 
 function StockGraphComponent() {
@@ -8,7 +8,7 @@ function StockGraphComponent() {
       <h2 className="text-4xl sm:text-6xl font-bold text-center pt-8">Live Stock Graph</h2>
       <div className="flex flex-col justify-center items-center max-w-[92vw] sm:max-w-[100vw] mx-auto">
         <div className="flex flex-col sm:flex-row w-full justify-evenly items-center gap-4 mt-12">
-        <StockDropdown />
+        <StockDropDown />
         <DurationToggle />
         </div>
         <StockGraph />
