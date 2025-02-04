@@ -3,7 +3,7 @@ import { Stock, StockGraphData } from './types';
 
 interface StockState {
   stocks: Stock[];
-  selectedStock: string | null;
+  selectedStock: Stock | null;
   duration: string;
   graphData: StockGraphData[];
   loading: boolean;
@@ -24,8 +24,9 @@ const stockSlice = createSlice({
     setStocks: (state, action: PayloadAction<Stock[]>) => {
       state.stocks = action.payload;
     },
-    setSelectedStock: (state, action: PayloadAction<string>) => {
+    setSelectedStock: (state, action: PayloadAction<Stock | null>) => {
       state.selectedStock = action.payload;
+      state.duration = '';
     },
     setDuration: (state, action: PayloadAction<string>) => {
       state.duration = action.payload;

@@ -17,16 +17,34 @@ const StockGraph: React.FC = () => {
     );
   }
 
+  if (!Array.isArray(graphData) || graphData.length === 0) {
+    return (
+      <div className="flex justify-center items-center h-64">
+        <p className="text-gray-500">No data available for the selected stock.</p>
+      </div>
+    );
+  }
+
+  const maxDataPoints = window.innerWidth < 768 ? 50 : 100;
+  let displayData = graphData;
+
+  if (graphData.length > maxDataPoints) {
+    const step = Math.floor(graphData.length / maxDataPoints);
+    
+    displayData = graphData.filter((_, index) => index % step === 0);
+  }
+
   const data = {
-    labels: graphData.map((point) => point.timestamp),
+    labels: displayData.map((item) => item.timestamp),
     datasets: [
       {
-        label: `${selectedStock} (${duration})`,
-        data: graphData.map((point) => point.value),
-        borderColor: "rgba(75,192,192,1)",
-        backgroundColor: "rgba(75,192,192,0.2)",
+        label: `${selectedStock.name} (${duration})`,
+        data: displayData.map((item) => item.price),
+        borderColor: "rgb(41, 236, 236)",
+        backgroundColor: "rgba(75, 192, 192, 0.35)",
+        pointRadius: window.innerWidth < 568 ? 2 : window.innerWidth < 768 ? 3 : 5,
         fill: true,
-        tension: 0.4,
+        tension: 0.3,
       },
     ],
   };
@@ -35,15 +53,26 @@ const StockGraph: React.FC = () => {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
-      x: { title: { display: true, text: "Time" } },
-      y: { title: { display: true, text: "Value" } },
+      x: {
+        ticks: {
+          minRotation: 45,
+          maxTicksLimit: window.innerWidth < 768 ? 6 : 12, color: '#D3D3D3'
+        },
+        title: { display: true, text: "Time", color: '#D3D3D3' },
+      },
+      y: { ticks:{ color: '#D3D3D3' }, title: { display: true, text: "Price", color: '#D3D3D3' } },
     },
   };
 
   return (
-    <div className="w-full h-96 p-4">
-      <Line data={data} options={options} />
-    </div>
+    <>
+      <p className="text-xl sm:text-2xl mt-10 text-center">
+        Graph for {selectedStock.name} within {duration} :
+      </p>
+      <div className="w-full h-[400px] sm:h-[550px] md:h-[650px] sm:max-w-[90vw] sm:p-4 mt-[10px] mb-18">
+        <Line data={data} options={options} />
+      </div>
+    </>
   );
 };
 

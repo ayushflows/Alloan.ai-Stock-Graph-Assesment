@@ -9,16 +9,11 @@ const useFetchData = (stockId: string | null, duration: string) => {
   const { loading } = useSelector((state: RootState) => state.stocks);
 
   useEffect(() => {
-    if (!stockId) return;
+    if (!stockId || !duration || loading) return;
 
-    const interval = setInterval(() => {
-      if (!loading) {
-        dispatch(fetchStockGraphData(stockId, duration));
-      }
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [dispatch, stockId, duration, loading]);
+    // Fetch data immediately when duration changes
+    dispatch(fetchStockGraphData(stockId, duration));
+  }, [dispatch, stockId, duration]);
 };
 
 export default useFetchData;

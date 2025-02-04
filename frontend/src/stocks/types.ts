@@ -1,10 +1,14 @@
 export interface Stock {
     id: string; // Unique identifier for the stock
     name: string; // Stock name (e.g., "Apple", "Google")
+    available: string[];
   }
   
   export interface StockGraphData {
-    timestamp: string; // Time of the data point (e.g., "2025-02-01 10:00")
-    value: number; // Stock value at that timestamp
+    change: number;
+    change_percent: number;
+    price: number;
+    volume: number,
+    timestamp: string;
   }
   
