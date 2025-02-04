@@ -4,6 +4,10 @@
 
 This assignment is designed to display graphs of different stocks and their durations. The application allows users to visualize stock data in an interactive and user-friendly manner.
 
+## Live Link
+
+You can access the live application at: [https://assesment-alloan.web.app](https://assesment-alloan.web.app).
+
 ## Tech Stack
 
 - **React**: A JavaScript library for building user interfaces.
@@ -96,6 +100,7 @@ frontend/
 ### Additional Points
 
 - Hosted the application and shared a link.
+
 
 ## Conclusion
 
