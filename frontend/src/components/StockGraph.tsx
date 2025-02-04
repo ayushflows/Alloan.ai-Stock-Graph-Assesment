@@ -40,9 +40,9 @@ const StockGraph: React.FC = () => {
       {
         label: `${selectedStock.name} (${duration})`,
         data: displayData.map((item) => item.price),
-        borderColor: "rgb(41, 236, 236)",
-        backgroundColor: "rgba(75, 192, 192, 0.35)",
-        pointRadius: window.innerWidth < 568 ? 2 : window.innerWidth < 768 ? 3 : 5,
+        borderColor: "rgb(254, 169, 0)",
+        backgroundColor: "rgba(244, 200, 131, 0.32)",
+        pointRadius: window.innerWidth < 568 ? 2 : window.innerWidth < 768 ? 3 : 6,
         fill: true,
         tension: 0.3,
       },

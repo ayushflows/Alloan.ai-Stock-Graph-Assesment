@@ -1,50 +1,102 @@
-# React + TypeScript + Vite
+# Intern Assignment - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+This assignment is designed to display graphs of different stocks and their durations. The application allows users to visualize stock data in an interactive and user-friendly manner.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Vite**: A build tool that provides a faster and leaner development experience for modern web projects.
+- **React-Chart**: A library for creating charts in React applications.
+- **TailwindCSS**: A utility-first CSS framework for rapid UI development.
+- **Redux Toolkit**: A library for managing global state in React applications.
+- **Thunk**: Middleware for handling asynchronous logic in Redux.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Approach
 
-- Configure the top-level `parserOptions` property like this:
+1. **Setup**: Initialized the project using Vite with React and TypeScript templates.
+2. **Development**: Implemented the required features and components using React, TypeScript, React-Chart, TailwindCSS, and Redux Toolkit.
+3. **Testing**: Ensured the application works as expected with various test cases.
+4. **Optimization**: Used Vite's fast refresh capabilities for a better development experience.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## File Structure
+
+```
+frontend/
+├── public/
+│   ├── index.html
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── features/
+│   ├── hooks/
+│   ├── pages/
+│   ├── store/
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│   ├── tailwind.config.js
+├── .gitignore
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Main Dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **react**: ^17.0.2
+- **react-dom**: ^17.0.2
+- **react-redux**: ^7.2.4
+- **@reduxjs/toolkit**: ^1.5.1
+- **redux-thunk**: ^2.3.0
+- **react-chartjs-2**: ^3.0.3
+- **chart.js**: ^3.2.0
+- **tailwindcss**: ^2.1.2
+- **typescript**: ^4.2.4
+- **vite**: ^2.3.2
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Steps to Use the Application
+
+1. **Clone the Repository**:
+    ```sh
+    git clone https://github.com/ayushflows/Alloan.ai-Stock-Graph-Assesment.git
+    cd frontend
+    ```
+
+2. **Install Dependencies**:
+    ```sh
+    npm install
+    ```
+
+3. **Run the Application**:
+    ```sh
+    npm run dev
+    ```
+
+4. **Open in Browser**:
+    Open your browser and navigate to `http://localhost:5173` to view the application.
+
+## Assignment Details
+
+### Implemented Features
+
+- A dropdown to select a stock.
+- A way to switch between durations for the selected stock.
+- A graph for the selected stock and duration that updates dynamically as data is received.
+- Responsive and visually appealing design.
+
+### Tech Constraints
+
+- Used Redux Toolkit for managing global state and thunk for API calls.
+- Avoided drilling props beyond level 2.
+- Used pre-built components and libraries (e.g., MUI, react-chartjs).
+
+### Additional Points
+
+- Hosted the application and shared a link.
+
+## Conclusion
+
+This project demonstrates the setup and configuration of a React application using TypeScript and Vite. The approach ensures a robust and maintainable codebase, with a focus on displaying stock data interactively.
