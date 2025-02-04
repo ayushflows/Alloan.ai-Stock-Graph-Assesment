@@ -2,6 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import bgImg from "../assets/bgimg.png";
 import { motion } from "framer-motion";
 import StockGraphComponent from "../components/StockGraphComponent";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function LandingPage() {
   const [animateText, setAnimateText] = useState(false);
@@ -35,6 +37,7 @@ function LandingPage() {
             filter: "invert(1)",
           }}
         ></div>
+        <Navbar handleGetStartedClick={handleGetStartedClick} />
         <div className="abel-regular w-full text-center pt-32 relative">
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold"
@@ -126,6 +129,8 @@ function LandingPage() {
       <div ref={graphRef}>
         <StockGraphComponent />
       </div>
+
+      <Footer handleGetStartedClick={handleGetStartedClick}  />
     </>
   );
 }
