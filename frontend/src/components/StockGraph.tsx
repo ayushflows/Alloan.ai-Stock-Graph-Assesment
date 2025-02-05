@@ -16,14 +16,21 @@ const StockGraph: React.FC = () => {
       </div>
     );
   }
-
   if (!Array.isArray(graphData) || graphData.length === 0) {
     return (
       <div className="flex justify-center items-center h-64">
-        <p className="text-gray-500">No data available for the selected stock.</p>
+        <p className="text-gray-500 flex items-center">
+          Loading the Graph Data
+          <span className="dot-animate">
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+          </span>
+        </p>
       </div>
     );
   }
+  
 
   const maxDataPoints = window.innerWidth < 768 ? 50 : 100;
   let displayData = graphData;
