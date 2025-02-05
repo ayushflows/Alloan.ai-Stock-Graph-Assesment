@@ -17,6 +17,7 @@ You can access the live application at: [https://assesment-alloan.web.app](https
 - **TailwindCSS**: A utility-first CSS framework for rapid UI development.
 - **Redux Toolkit**: A library for managing global state in React applications.
 - **Thunk**: Middleware for handling asynchronous logic in Redux.
+- **Firebase Auth**: A service for user authentication.
 
 ## Approach
 
@@ -60,6 +61,7 @@ frontend/
 - **tailwindcss**: ^2.1.2
 - **typescript**: ^4.2.4
 - **vite**: ^2.3.2
+- **firebase**: ^8.6.8
 
 ## Steps to Use the Application
 
