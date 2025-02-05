@@ -74,7 +74,6 @@ The objective of this project is to build a responsive frontend that displays dy
     ```
 4. The backend server will be running on `http://localhost:3000`
 
-### Add a Demonstration Video
-
-Make a demonstration video showcasing the frontend, not longer than 2-3 minutes. Explain what you have done and how the application works.
+### Demonstration Video
+Demonstration video showcasing the frontend: [https://drive.google.com/file/d/1xgr507DOxpnVEAEUOn5ZSFsSGaSQ4Iqc/view?usp=sharing](https://drive.google.com/file/d/1xgr507DOxpnVEAEUOn5ZSFsSGaSQ4Iqc/view?usp=sharing)  
 
