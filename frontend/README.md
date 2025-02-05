@@ -74,12 +74,24 @@ frontend/
     npm install
     ```
 
-3. **Run the Application**:
+3. **Add Environment Variables**:
+    Create a `.env` file in the root directory and add the necessary environment variables:
+    ```sh
+    VITE_BACKEND_URI=http://localhost:3000/
+    VITE_FIREBASE_API_KEY=<your_firebase_api_key>
+    VITE_FIREBASE_AUTH_DOMAIN=<your_firebase_auth_domain>
+    VITE_FIREBASE_PROJECT_ID=<your_firebase_project_id>
+    VITE_FIREBASE_STORAGE_BUCKET=<your_firebase_storage_bucket>
+    VITE_FIREBASE_MESSAGING_SENDER_ID=<your_firebase_messaging_sender_id>
+    VITE_FIREBASE_APP_ID=<your_firebase_app_id>
+    ```
+
+4. **Run the Application**:
     ```sh
     npm run dev
     ```
 
-4. **Open in Browser**:
+5. **Open in Browser**:
     Open your browser and navigate to `http://localhost:5173` to view the application.
 
 ## Assignment Details
@@ -100,7 +112,6 @@ frontend/
 ### Additional Points
 
 - Hosted the application and shared a link.
-
 
 ## Conclusion
 

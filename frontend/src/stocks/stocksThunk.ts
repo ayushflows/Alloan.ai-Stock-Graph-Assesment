@@ -5,7 +5,7 @@ import { setStocks, setGraphData, setLoading } from './stocksSlice';
 export const fetchStocks = () => async (dispatch: AppDispatch) => {
   dispatch(setLoading(true));
   try {
-    const response = await axios.get('https://alloan-ai-stock-graph-assesment.onrender.com/api/stocks');
+    const response = await axios.get(import.meta.env.VITE_BACKEND_URI+'api/stocks');
     dispatch(setStocks(response.data));
   } catch (error) {
     console.error('Failed to fetch stocks:', error);
@@ -23,7 +23,7 @@ export const fetchStockGraphData =
 
     while (status !== 'COMPLETE') {
       try {
-        const response = await axios.post(`https://alloan-ai-stock-graph-assesment.onrender.com/api/stocks/${stockId}`, {
+        const response = await axios.post(import.meta.env.VITE_BACKEND_URI+`api/stocks/${stockId}`, {
           duration,
         });
         const { data, status: newStatus } = response.data;

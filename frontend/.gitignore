@@ -27,3 +27,5 @@ dist-ssr
 firebase.json
 .firebase
 dist
+
+.env

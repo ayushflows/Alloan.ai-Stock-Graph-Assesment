@@ -11,7 +11,6 @@ const useFetchData = (stockId: string | null, duration: string) => {
   useEffect(() => {
     if (!stockId || !duration || loading) return;
 
-    // Fetch data immediately when duration changes
     dispatch(fetchStockGraphData(stockId, duration));
   }, [dispatch, stockId, duration]);
 };
