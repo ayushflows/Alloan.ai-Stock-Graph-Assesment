@@ -14,7 +14,6 @@ const DurationToggle: React.FC = () => {
   const handleClick = (selectedDuration: string) => {
     dispatch(setDuration(selectedDuration));
   };
-console.log("selectedStock", selectedStock)
 
   return (
 <div className="flex justify-center flex-wrap gap-4 my-4">
